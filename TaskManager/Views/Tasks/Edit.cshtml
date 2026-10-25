@@ -1,0 +1,35 @@
+﻿@model TaskManager.Data.TaskModel
+
+<h1>Edit Task</h1>
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div>
+        <label>Name</label>
+        <input type="text" name="Name" />
+    </div>
+
+    <div>
+        <label>Description</label>
+        <input type="text" name="Description" />
+    </div>
+
+    <div>
+        <label>Due Date</label>
+        <input type="datetime" name="DueDate" />
+    </div>
+
+    <div>
+        <label>Is Complete?</label>
+        @if (Model.IsComplete)
+            {
+                <input type="checkbox" name="IsComplete" checked />
+            }
+            else
+            {
+            <input type="checkbox" name="IsComplete" />
+            }
+        </div>
+
+    <button type="submit">Edit Task</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@using TaskManager.Data;
+
+@model IEnumerable<TaskModel>
+
+<h1>Task Dashboard</h1>
+<h2>Current Tasks</h2>
+
+<a href="/Tasks/Create" class="btn btn-outline-dark">Create Task</a>
+
+@foreach (var task in Model)
+{
+    <div>
+        <p>
+
+
+          <p>@task.Name</p>
+          <a href="/Tasks/Edit/@(task.Id)" class="btn btn-primary">Edit</a>
+          <a href="/Tasks/Delete/@(task.Id)" class="btn btn-danger">Delete</a>
+        </p>
+    </div>
+    
+}
